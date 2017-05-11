@@ -1,0 +1,28 @@
+<head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    <meta name="author" content="">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ " /feed.xml " | relative_url }}">
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{{site.baseurl}}/assets/images/favicon.ico">
+    <!-- FONTS -->
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Patua+One:100,300,400,400italic,700'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Caudex:400,400italic,700'>
+    <link rel='stylesheet' id='Cuprum-css' href='http://fonts.googleapis.com/css?family=Cuprum:400,400italic,700'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:100,300,400'>
+    <!-- CSS -->
+    <link rel='stylesheet' href='{{site.baseurl}}/assets/css/global.css'>
+    <link rel='stylesheet' href='{{site.baseurl}}/assets/css/structure.css'>
+    <link rel='stylesheet' href='{{site.baseurl}}/assets/css/dmd.css'>
+    <link rel='stylesheet' href='{{site.baseurl}}/assets/css/custom.css'>
+    <!-- Revolution Slider -->
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/plugins/rs-plugin/css/settings.css"> 
+
+    {% if jekyll.environment == 'production' and site.google_analytics %} 
+    {% include google-analytics.html %} {% endif %}
+</head>
